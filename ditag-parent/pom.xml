@@ -9,6 +9,11 @@
     <version>1.0</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>../ditag-import</module>
+        <module>../common-java</module>
+    </modules>
+
     <properties>
         <!-- project-related properties -->
         <jdk.version>1.8</jdk.version>
