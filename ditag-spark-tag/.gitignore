@@ -1,0 +1,75 @@
+### project-special ###
+*.log
+logs/
+test/
+images/
+demo.json
+
+### document ###
+*.xlx
+*.xlsx
+*.csv
+*.pdf
+
+### springboot ###
+HELP.md
+target/
+.mvn
+mvnw
+mvnw.cmd
+
+### hexo ###
+.DS_Store/
+node_modules/
+Thumbs.db
+db.json
+*.log
+public/
+.deploy*/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### python ###
+__pycache__/
+*.pyc
+
+### VisualStudio ###
+*.suo
+*.njsproj
+*.sln
+*.rsuser
+*.user
+.vs/
+*.meta
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+### Sublime Text ###
+*.sublime-project
+*.sublime-workspace

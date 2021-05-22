@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    # 环境设置：dev,test,prod
+    active: dev
+
+# git分支控制
+# feature branches  (dev)，理论上从develop上切出来分支
+# develop  (dev)，永远是最新的代码，都得合并到这里
+# release branches  (test)，此时修复的bug
+# hotfixes
+# master  (prod)，线上代码，只接受从release上的合并
