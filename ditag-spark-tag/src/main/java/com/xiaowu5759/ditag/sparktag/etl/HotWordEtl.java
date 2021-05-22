@@ -70,7 +70,8 @@ public class HotWordEtl {
         });
         List<Tuple2<String, Integer>> take = hotWordRDD.take(10);
         for(Tuple2<String, Integer> tuple2 : take){
-            String word = new String(tuple2._1.getBytes("UTF-8"), "UTF-8");
+            // 转化编码也是乱码
+            String word = new String(tuple2._1.getBytes("GBK"), "UTF-8");
             System.out.println(word + "===" + tuple2._2);
         }
 
