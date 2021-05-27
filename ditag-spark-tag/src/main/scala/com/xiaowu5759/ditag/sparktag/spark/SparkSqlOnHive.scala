@@ -1,4 +1,4 @@
-package com.xiaowu5759.ditag.sparktag.etl
+package com.xiaowu5759.ditag.sparktag.spark
 
 import org.apache.spark.sql.SparkSession
 
