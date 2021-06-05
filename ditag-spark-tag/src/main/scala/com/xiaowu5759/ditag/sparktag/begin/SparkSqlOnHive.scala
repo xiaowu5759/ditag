@@ -1,4 +1,4 @@
-package com.xiaowu5759.ditag.sparktag.spark
+package com.xiaowu5759.ditag.sparktag.begin
 
 import org.apache.spark.sql.SparkSession
 

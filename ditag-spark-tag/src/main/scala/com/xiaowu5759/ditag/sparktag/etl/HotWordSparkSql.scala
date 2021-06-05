@@ -9,7 +9,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   * @ 2021/5/22 12:33 AM
   *
   */
-object HotWordSql {
+object HotWordSparkSql {
   def main(args: Array[String]): Unit = {
     val config = new SparkConf().setMaster("local").setAppName("hotwordscala")
     val sc = new SparkContext(config)

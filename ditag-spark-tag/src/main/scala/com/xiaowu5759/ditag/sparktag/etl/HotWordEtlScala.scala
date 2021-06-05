@@ -7,7 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   * @ 2021/5/21 10:16 PM
   *
   */
-object HotWordEtlWithScala {
+object HotWordEtlScala {
   def main(args: Array[String]): Unit = {
     val config = new SparkConf().setMaster("local").setAppName("hotwordscala")
     val sc = new SparkContext(config)
