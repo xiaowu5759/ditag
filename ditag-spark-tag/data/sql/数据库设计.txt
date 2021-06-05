@@ -1,0 +1,5 @@
+i_commodity
+i_marketing
+i_member
+i_operation
+i_order
