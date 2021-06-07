@@ -3,7 +3,7 @@
 
 - idea需要安装scala插件
 - 依次创建实体类entity
-- dao/Repository
+- dao/Repository，JpaRepository[]
 - Service
 - Controller
 
