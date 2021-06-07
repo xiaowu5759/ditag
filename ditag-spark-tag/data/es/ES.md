@@ -105,7 +105,9 @@ GET /tag/_mapping
 ```
 GET /tag/_search
 {
-  # query dsl json here
+  "query": {
+      "match_all": {}
+    }
 }
 ```
 

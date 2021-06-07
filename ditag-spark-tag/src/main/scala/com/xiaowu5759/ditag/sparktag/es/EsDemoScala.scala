@@ -39,6 +39,8 @@ object EsDemoScala {
     arrayBuf.+=(new User("Eric", 20))
     val userRDD = sc.parallelize(arrayBuf)
 
+    // 最终确定是版本问题sprak的版本太多
+    // todo 推送的时候，指定id
     EsSpark.saveToEs(userRDD, "user/_doc")
     println("====== 上传es成功")
   }

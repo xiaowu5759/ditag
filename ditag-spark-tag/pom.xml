@@ -51,12 +51,15 @@
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch-spark-20_${scala.version}</artifactId>
+            <!--<version>7.12.0</version>-->
         </dependency>
+        <!--spark-core版本会出现冲突，默认的是scala2.11，spark2.3.0-->
         <!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch-hadoop -->
-        <dependency>
-            <groupId>org.elasticsearch</groupId>
-            <artifactId>elasticsearch-hadoop</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.elasticsearch</groupId>-->
+            <!--<artifactId>elasticsearch-hadoop</artifactId>-->
+            <!--<version>7.12.0</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
