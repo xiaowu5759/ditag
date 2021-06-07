@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.{GetMapping, RequestMapping, Rest
 class DemoController(@Autowired private val demoService: DemoService) {
 
   @GetMapping
-  def get: ResultVO[String] = {
+  def get(): ResultVO[String] = {
     val str = demoService.demo()
     ResultWrapper.ok(str)
   }
