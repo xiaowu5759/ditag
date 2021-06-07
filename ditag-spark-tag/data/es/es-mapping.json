@@ -1,0 +1,86 @@
+// PUT /tag?pretty
+{
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "properties": {
+      "channel": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "chargeMoney": {
+        "type": "float"
+      },
+      "couponTimes": {
+        "type": "date"
+      },
+      "favGoods": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "feedBack": {
+        "type": "long"
+      },
+      "freeCouponTime": {
+        "type": "date"
+      },
+      "memberId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "orderCount": {
+        "type": "long"
+      },
+      "orderMoney": {
+        "type": "float"
+      },
+      "orderTime": {
+        "type": "date"
+      },
+      "overTime": {
+        "type": "long"
+      },
+      "phone": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "regTime": {
+        "type": "date"
+      },
+      "sex": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "subOpenId": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      }
+    }
+  }
+}
