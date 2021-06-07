@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service
   */
 @Service
 class DemoServiceImpl extends DemoService {
-  override def demo: String = {
+  override def demo(): String = {
     val string = "demoService"
     string
   }

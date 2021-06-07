@@ -10,5 +10,5 @@ package com.xiaowu5759.ditag.spscala.service
 trait DemoService {
 
   // 测试用 demo
-  def demo: String
+  def demo(): String
 }

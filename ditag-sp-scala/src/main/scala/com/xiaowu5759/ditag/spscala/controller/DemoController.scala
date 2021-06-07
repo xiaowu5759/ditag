@@ -16,7 +16,7 @@ class DemoController(@Autowired private val demoService: DemoService) {
 
   @GetMapping
   def get: ResultVO[String] = {
-    val str = demoService.demo
+    val str = demoService.demo()
     ResultWrapper.ok(str)
   }
 

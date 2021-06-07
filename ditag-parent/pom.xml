@@ -13,6 +13,8 @@
         <module>../ditag-import</module>
         <module>../common-java</module>
         <module>../ditag-spark-tag</module>
+        <module>../ditag-es-tag</module>
+        <module>../ditag-sp-scala</module>
     </modules>
 
     <properties>
