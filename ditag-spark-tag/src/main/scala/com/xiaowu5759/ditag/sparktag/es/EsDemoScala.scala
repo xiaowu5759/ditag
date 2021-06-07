@@ -6,7 +6,7 @@ import java.util.Map
 
 import com.alibaba.fastjson.JSON
 import com.alibaba.fastjson.serializer.SerializeConfig
-import com.xiaowu5759.ditag.sparktag.support.SparkSessionUtils
+import com.xiaowu5759.ditag.sparktag.support.SparkUtils
 import org.apache.commons.beanutils.BeanUtils
 import org.apache.spark.api.java.JavaPairRDD
 import org.apache.spark.rdd.RDD
@@ -33,7 +33,7 @@ object EsDemoScala {
 
   // rdd 添加
   def addEsDemo(): Unit ={
-    val sc = SparkSessionUtils.getSC2Es(true)
+    val sc = SparkUtils.getSC2Es(true)
 
     val helloWorld = sc.parallelize(List("Hello,World!","Hello,Spark!","Hello,BigData!"))
     helloWorld.foreach(line => println(line))
@@ -52,7 +52,7 @@ object EsDemoScala {
 
   // es 查询
   def searchEsDemo(): Unit ={
-    val sc = SparkSessionUtils.getSC2Es(true)
+    val sc = SparkUtils.getSC2Es(true)
     // scala collection.map 和 Predef.Map
     val pairRDD: RDD[(String, collection.Map[String, AnyRef])] = EsSpark.esRDD(sc, "user/_doc")
     val stringMap: collection.Map[String, collection.Map[String, AnyRef]] = pairRDD.collectAsMap()
@@ -71,7 +71,7 @@ object EsDemoScala {
 
   // es query
   def queryEsDemo(): Unit ={
-    val sc = SparkSessionUtils.getSC2Es(true)
+    val sc = SparkUtils.getSC2Es(true)
 
     val query = "{\"query\":{\"bool\":{\"should\":[{\"match\":{\"name\":\"Eric\"}},{\"range\":{\"FIELD\":{\"gte\":30,\"lte\":40}}}]}}}"
     val pairRDD = EsSpark.esJsonRDD(sc, "user/_doc", query)

@@ -11,7 +11,7 @@ import org.apache.spark.sql.SparkSession;
  * @author xiaowu
  * @date 2021/5/27 7:34 PM
  */
-public class SparkSessionUtils {
+public class SparkUtils {
 
     private static ThreadLocal<JavaSparkContext> jscPool = new ThreadLocal<>();
 
@@ -62,6 +62,9 @@ public class SparkSessionUtils {
                 .master("local[*]")
                 .config("spark.sql.warehouse.dir", "hdfs://gown:8020/user/hive/warehouse")
                 .config("hive.metastore.uris", "thrift://emilia:9083")
+                .config("es.nodes", "192.168.31.156")
+                .config("es.port", "9200")
+                .config("es.index.auto.create", "false")
                 .enableHiveSupport()
                 .getOrCreate();
         ssPool.set(session);

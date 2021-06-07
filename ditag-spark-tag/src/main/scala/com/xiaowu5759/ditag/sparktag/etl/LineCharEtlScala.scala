@@ -7,7 +7,7 @@ import com.alibaba.fastjson.{JSON, JSONObject}
 import com.alibaba.fastjson.serializer.SerializeConfig
 import com.xiaowu5759.common.constant.DateFormatConstants
 import com.xiaowu5759.ditag.sparktag.etl.RemindEtlScala.FreeReminder
-import com.xiaowu5759.ditag.sparktag.support.SparkSessionUtils
+import com.xiaowu5759.ditag.sparktag.support.SparkUtils
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.{Dataset, Row, SparkSession}
 
@@ -22,7 +22,7 @@ import scala.collection.mutable.ArrayBuffer
   */
 object LineCharEtlScala {
   def main(args: Array[String]): Unit = {
-    val LineVOS = this.listLinVO(SparkSessionUtils.initSession())
+    val LineVOS = this.listLinVO(SparkUtils.initSession())
     println("======" + JSON.toJSONString(LineVOS, new SerializeConfig(true)))
   }
 

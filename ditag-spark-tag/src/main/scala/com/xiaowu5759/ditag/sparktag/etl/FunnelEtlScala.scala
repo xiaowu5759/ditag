@@ -2,7 +2,7 @@ package com.xiaowu5759.ditag.sparktag.etl
 
 import com.alibaba.fastjson.JSON
 import com.alibaba.fastjson.serializer.SerializeConfig
-import com.xiaowu5759.ditag.sparktag.support.SparkSessionUtils
+import com.xiaowu5759.ditag.sparktag.support.SparkUtils
 import org.apache.spark.sql.{Dataset, Row, SparkSession}
 
 /**
@@ -14,7 +14,7 @@ import org.apache.spark.sql.{Dataset, Row, SparkSession}
   */
 object FunnelEtlScala {
   def main(args: Array[String]): Unit = {
-    val sparkSession = SparkSessionUtils.initSession()
+    val sparkSession = SparkUtils.initSession()
     val funnelVO = this.getFunnelVO(sparkSession)
     println("======" + JSON.toJSONString(funnelVO, new SerializeConfig(true)))
   }

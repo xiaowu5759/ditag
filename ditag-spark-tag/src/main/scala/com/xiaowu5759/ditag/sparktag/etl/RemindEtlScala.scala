@@ -8,7 +8,7 @@ import cn.hutool.core.date.DateUtil
 import com.alibaba.fastjson.JSON
 import com.alibaba.fastjson.serializer.SerializeConfig
 import com.xiaowu5759.common.constant.DateFormatConstants
-import com.xiaowu5759.ditag.sparktag.support.SparkSessionUtils
+import com.xiaowu5759.ditag.sparktag.support.SparkUtils
 import org.apache.spark.sql.{Dataset, Row, SparkSession}
 
 /**
@@ -22,7 +22,7 @@ import org.apache.spark.sql.{Dataset, Row, SparkSession}
 object RemindEtlScala {
   def main(args: Array[String]): Unit = {
     // 先定义 领域模型
-    val sparkSession = SparkSessionUtils.initSession()
+    val sparkSession = SparkUtils.initSession()
     val freeReminders = this.listFreeReminder(sparkSession)
     val couponReminders = this.listCouponReminder(sparkSession)
 
