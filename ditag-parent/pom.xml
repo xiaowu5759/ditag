@@ -18,13 +18,13 @@
     </modules>
 
     <properties>
-        <!-- project-related properties -->
+        <!-- project-related config -->
         <java.version>1.8</java.version>
         <scala.version>2.12</scala.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <!-- plugin-related properties -->
+        <!-- plugin-related config -->
         <resources.version>2.6</resources.version>
         <compiler.version>3.1</compiler.version>
         <assembly.version>3.1</assembly.version>
@@ -36,7 +36,7 @@
         <scala.test.plugin.version>1.0</scala.test.plugin.version>
         <exec.version>1.5.0</exec.version>
 
-        <!-- dependency-related properties -->
+        <!-- dependency-related config -->
         <logging.log4j.version>2.11.0</logging.log4j.version>
         <log4j.version>1.2.17</log4j.version>
         <log4j2.version>2.2</log4j2.version>
@@ -45,10 +45,9 @@
         <scala.logging.version>3.9.0</scala.logging.version>
         <spring.version>5.2.4.RELEASE</spring.version>
         <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
-        <spring.data.version>2.2.5.RELEASE</spring.data.version>
         <janino.version>3.0.8</janino.version>
-        <spark.version>2.4.0</spark.version>
 
+        <spark.version>2.4.0</spark.version>
         <hadoop.version>2.7.3</hadoop.version>
         <hive.version>1.2.1</hive.version>
         <hbase.version>1.2.0</hbase.version>
@@ -92,6 +91,11 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-freemarker</artifactId>
                 <version>${spring.boot.version}</version>
             </dependency>
             <dependency>
@@ -158,17 +162,10 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${compiler.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.scala-tools</groupId>
-                    <artifactId>maven-scala-plugin</artifactId>
-                    <version>${scala.tools.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>net.alchim31.maven</groupId>
-                    <artifactId>scala-maven-plugin</artifactId>
-                    <version>${scala.plugin.version}</version>
+                    <configuration>
+                        <source>8</source>
+                        <target>8</target>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
@@ -176,6 +173,21 @@
                     <version>${spring.boot.version}</version>
                 </plugin>
 
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                    <!--<version>${compiler.version}</version>-->
+                <!--</plugin>-->
+                <!--<plugin>-->
+                    <!--<groupId>org.scala-tools</groupId>-->
+                    <!--<artifactId>maven-scala-plugin</artifactId>-->
+                    <!--<version>${scala.tools.version}</version>-->
+                <!--</plugin>-->
+                <!--<plugin>-->
+                    <!--<groupId>net.alchim31.maven</groupId>-->
+                    <!--<artifactId>scala-maven-plugin</artifactId>-->
+                    <!--<version>${scala.plugin.version}</version>-->
+                <!--</plugin>-->
                 <!--<plugin>-->
                     <!--<groupId>org.apache.maven.plugins</groupId>-->
                     <!--<artifactId>maven-surefire-plugin</artifactId>-->
@@ -187,14 +199,14 @@
                     <!--<version>${jar.version}</version>-->
                 <!--</plugin>-->
                 <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-war-plugin</artifactId>-->
-                <!--<version>${war.version}</version>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-war-plugin</artifactId>-->
+                    <!--<version>${war.version}</version>-->
                 <!--</plugin>-->
                 <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-assembly-plugin</artifactId>-->
-                <!--<version>${assembly.version}</version>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-assembly-plugin</artifactId>-->
+                    <!--<version>${assembly.version}</version>-->
                 <!--</plugin>-->
                 <!--<plugin>-->
                     <!--<groupId>org.codehaus.mojo</groupId>-->
