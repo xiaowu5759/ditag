@@ -22,18 +22,16 @@
         <java.version>1.8</java.version>
         <scala.version>2.12</scala.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- plugin-related config -->
         <resources.version>2.6</resources.version>
         <compiler.version>3.1</compiler.version>
-        <assembly.version>3.1</assembly.version>
+        <assembly.version>3.1.0</assembly.version>
         <surefire.version>2.19.1</surefire.version>
         <jar.version>2.6</jar.version>
         <war.version>3.1.0</war.version>
         <scala.tools.version>2.15.2</scala.tools.version>
         <scala.plugin.version>3.3.1</scala.plugin.version>
-        <scala.test.plugin.version>1.0</scala.test.plugin.version>
         <exec.version>1.5.0</exec.version>
 
         <!-- dependency-related config -->
@@ -52,7 +50,6 @@
         <hive.version>1.2.1</hive.version>
         <hbase.version>1.2.0</hbase.version>
         <circe.version>0.9.3</circe.version>
-        <async.http.client.version>2.5.3</async.http.client.version>
         <config.version>1.3.0</config.version>
         <camel.version>2.19.0</camel.version>
         <joda.version>2.9.9</joda.version>
@@ -61,28 +58,33 @@
         <elasticsearch.version>7.12.0</elasticsearch.version>
     </properties>
 
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>artima</id>-->
-            <!--<name>Artima Maven Repository</name>-->
-            <!--<url>http://repo.artima.com/releases</url>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>cloudera</id>-->
-            <!--<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>spring-libs-release</id>-->
-            <!--<name>Spring Releases</name>-->
-            <!--<url>https://repo.spring.io/libs-release</url>-->
-            <!--<snapshots>-->
-                <!--<enabled>false</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-    <!--</repositories>-->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>artima</id>-->
+<!--            <name>Artima Maven Repository</name>-->
+<!--            <url>http://repo.artima.com/releases</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>cloudera</id>-->
+<!--            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>spring-libs-release</id>-->
+<!--            <name>Spring Releases</name>-->
+<!--            <url>https://repo.spring.io/libs-release</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>2.12.13</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
@@ -162,6 +164,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${compiler.version}</version>
                     <configuration>
                         <source>8</source>
                         <target>8</target>
@@ -172,17 +175,18 @@
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring.boot.version}</version>
                 </plugin>
+                <!--用这个插件来将依赖一块打进jar包-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${assembly.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.scala-tools</groupId>
+                    <artifactId>maven-scala-plugin</artifactId>
+                    <version>${scala.tools.version}</version>
+                </plugin>
 
-                <!--<plugin>-->
-                    <!--<groupId>org.apache.maven.plugins</groupId>-->
-                    <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                    <!--<version>${compiler.version}</version>-->
-                <!--</plugin>-->
-                <!--<plugin>-->
-                    <!--<groupId>org.scala-tools</groupId>-->
-                    <!--<artifactId>maven-scala-plugin</artifactId>-->
-                    <!--<version>${scala.tools.version}</version>-->
-                <!--</plugin>-->
                 <!--<plugin>-->
                     <!--<groupId>net.alchim31.maven</groupId>-->
                     <!--<artifactId>scala-maven-plugin</artifactId>-->
